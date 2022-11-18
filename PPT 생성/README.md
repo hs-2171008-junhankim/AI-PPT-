@@ -5,4 +5,7 @@
 input file에서 받은 파일을 base64로 변환한 뒤 사용하고 있습니다
 복구 뭐시기 뜨는 것도 아마 그거 때문일 거에요
 
+3.현재 구현된 부분은 이미지를 넣으면 그 이미지를 제목 슬라이드의 배경으로 하는 부분까지입니다
+
 참고:https://gitbrent.github.io/PptxGenJS/docs/masters/
+
