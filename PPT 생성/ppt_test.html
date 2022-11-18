@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>test</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.js"
+        integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+    <script src="./PptxGenJs/libs/jszip.min.js"></script>
+    <script src="./PptxGenJs/dist/pptxgen.min.js"></script>
+    <script src="./PptxGenJs/dist/pptxgen.bundle.js"></script>
+    <script>
+
+        //이미지를 base64로 변환
+        let result;
+
+        function readImage(input) {
+            if (input.files && input.files[0]) {
+                var FR = new FileReader();
+                FR.onload = function (e) {
+                    $('#img').attr("src", e.target.result);
+                    result=e.target.result;
+                    makePpt();
+                };
+                FR.readAsDataURL(input.files[0]);
+            }
+        }
+
+        $(document).ready(function () {
+            $("#baseFile").change(function () {
+                readImage(this);
+            });
+
+            $("#baseFile").trigger("change");
+
+        });
+
+        function makePpt() {
+            
+
+            let pptx = new PptxGenJS();
+            pptx.layout = "LAYOUT_WIDE";
+            pptx.defineSlideMaster({
+                title: "제목 슬라이드",
+                background: { color: "999999" },
+                objects: [
+                    { image: { x: 0, y: 0, w: "100%", h: "100%", path: result } },
+                    //{ line: { x: 3.5, y: 1.0, w: 6.0, line: { color: "0088CC", width: 5 } } },
+                    //{ rect: { x: 0.0, y: 5.3, w: "100%", h: 0.75, fill: { color: "F1F1F1" } } },
+                    //{ text: { text: "Status Report", options: { x: "50%", y: "50%", w: "100%", h: "100%" } } },
+                    {
+                        placeholder: {
+                            options: { name: "body", type: "title", x: 0, y: 2.5, h: 3, w: "100%" },
+                            text: "(custom placeholder text!)",
+                        },
+                    }
+                ],
+                //slideNumber: { x: 0.3, y: "90%" },
+            });
+            pptx.defineSlideMaster({
+                title: "내용 슬라이드",
+                background: { color: "FFFFFF" },
+                objects: [
+                    //{ image: { x: 0, y: 0, w: "100%", h: "100%", path: "images/logo.png" } },
+                    //{ line: { x: 3.5, y: 1.0, w: 6.0, line: { color: "0088CC", width: 5 } } },
+                    //{ rect: { x: 0.0, y: 5.3, w: "100%", h: 0.75, fill: { color: "F1F1F1" } } },
+                    //{ text: { text: "Status Report", options: { x: "50%", y: "50%", w: "100%", h: "100%" } } },
+                    {
+                        placeholder: {
+                            options: { name: "body", type: "body", x: 0.6, y: 0.25, w: 12, h: 1 },
+                            text: "(custom placeholder text!)",
+                        },
+                    },
+                    {
+                        placeholder: {
+                            options: { name: "body2", type: "body", x: 0.6, y: 1.5, w: 12, h: 5.25 },
+                            text: "(custom placeholder text!)",
+                        },
+                    }
+                ],
+                //slideNumber: { x: 0.3, y: "90%" },
+            });
+            let slide = pptx.addSlide({ masterName: "제목 슬라이드" });
+            let slide2 = pptx.addSlide({ masterName: "내용 슬라이드" });
+            pptx.writeFile();
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <h3>test</h3>
+    <hr>
+    이미지를 올리면 그 이미지를 ppt에 넣습니다.<p>
+    <p><img id="img" src="" /></p>
+    <p><input type='file' id="baseFile" /></p>
+</body>
+
+</html>
