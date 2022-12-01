@@ -3,7 +3,10 @@
 ---
 
 # 목차
-@@ -11,3 +11,40 @@
+1. 개요
+    - 서비스 목적 및 배경
+    - 서비스 설명
+    - 서비스 구조
 2. 유사 서비스 분석
 3. 사용된 오픈소스 소프트웨어
 4. DFD (Data-Flow-Diagram)
@@ -75,26 +78,4 @@ About master slide : https://gitbrent.github.io/PptxGenJS/docs/masters/
 MIT 라이센스입니다.
 
 The MIT License (MIT)
-
-Copyright (c) 2015-2022 Brent Ely
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-=======
-
 
