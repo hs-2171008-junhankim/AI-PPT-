@@ -27,20 +27,20 @@
 
 # 3. 사용된 오픈소스 소프트웨어
 
-## TensorFlow
+### TensorFlow
 
-## 설명
+### 설명
 
    기존 사용자들이 원했던 템플릿과 같은 템플릿을 원하는 것 같을 때 템플릿을 추천해주는 용도로 사용한다.
 
 tensorflow는 graphs의 형태로 나타내는 프로그래밍 시스템을 말한다. 그래프에 있는 노드들은 operations이라고 불리우는데, 줄여서 ops라고 칭한다. op는 Tensor로 이루어져 있고, tensors간에 computaiton을 수행하게 된다. tensor는 multi-dimentional array형태로 되어있다. Tensorflow graph를 연산하기 위해서는 Session을 launch를 해야한다. Session은 Devices(CPUs, GPUs)위에서 연산을 실행한 후에 결과를 반환한다.
 
-## 특징
+### 특징
 
    ML 모델을 개발학 학습시키는 데 도움이 되는 핵심 오픈소스 라이브러리를 제공한다.
 즉각적인 모델 반복 및 손쉬운 디버깅을 가능하게 하는 즉시 실행 기능이 포함된 Keras와 같은 높은 수준의 직관적인 API를 사용하여 ML 모델을 쉽게 빌드하고 학습한다.
 
-## 출처 및 참고
+### 출처 및 참고
 
 [https://ourcstory.tistory.com/236](https://ourcstory.tistory.com/236)
 
@@ -48,7 +48,7 @@ tensorflow는 graphs의 형태로 나타내는 프로그래밍 시스템을 말�
 
 [https://github.com/tensorflow/tensorflow/blob/master/LICENSE](https://github.com/tensorflow/tensorflow/blob/master/LICENSE)
 
-## 라이센스
+### 라이센스
 
 ● Apache license 2.0
 복제, 배포, 수정의 권한 허용 : 가능
