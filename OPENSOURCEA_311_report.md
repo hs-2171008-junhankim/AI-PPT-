@@ -193,3 +193,41 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+### classify-images
+
+### 설명
+사용자가 키워드를 포함하는 파일을 업로드해서 알고리즘이 이미지 내용에 따라 각 이미지에 키워드를 할당하여 이미지를 분류한다.
+
+### 특징
+주어진 태그로 이미지를 분류하기 위한 웹 앱이다.
+이 애플리케이션은 프론트엔드와 백엔드로 구성된다.
+프런트엔드는 React 및 rsuite, axios 및 particle.js와 같은 패키지를 사용하여 구현된다.
+백엔드는 OpenAi의 CLIP 모델을 배포하여 제로샷 파일 분류, 비디오 검색 및 이미지 검색을 수행한다.
+
+### 참고
+github : https://github.com/Cameramorphic/classify-images
+OpenAi의 CLIP 모델 : https://github.com/openai/CLIP
+
+### License
+
+MIT License
+
+Copyright (c) 2021 Höhing, Nils; Rittenschober, Johann; Schuschnig, Ricarda; Schwarzer, Tobias;
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
