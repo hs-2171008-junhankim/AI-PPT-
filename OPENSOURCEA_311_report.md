@@ -63,6 +63,48 @@ tensorflow는 graphs의 형태로 나타내는 프로그래밍 시스템을 말�
 보증의 부인 : 가능
 책임의 제한 : 가능
 
+### robotstxt
+
+### 설명
+
+robots.txt는 웹사이트에서 크롤링하며 정보를 수집하는 검색엔진 크롤러(또는 검색 로봇)가 액세스 하거나 정보수집을 해도 되는 페이지가 무엇인지, 해서는 안 되는 페이지가 무엇인지 알려주는 역할을 하는 .txt (텍스트) 파일이다. robots.txt 파일은 검색엔진 크롤러가 웹사이트에 접속하여 정보 수집을 하며 보내는 요청(request)으로 인해 사이트 과부하되는 것을 방지하기 위해 사용된다. robots.txt에서 액세스가 허용하지 않은 디렉토리를 발견하면 크롤링을 하지않는다
+
+### 사용방법
+
+<aside>
+💡 User-agent: *
+Disallow: /forbidden/
+
+
+</aside>
+
+1. **User-agent**: robots.txt 에서 지정하는 크롤링 규칙이 적용되어야 할 크롤러를 지정합니다.
+2. **Allow**: 크롤링을 허용할 경로입니다 (/ 부터의 상대 경로).
+3. **Disallow**: 크롤링을 제한할 경로입니다 (/ 부터의 상대 경로).
+4. **Sitemap**: 웹사이트의 모든 리소스를 나열한 목록 파일입니다.
+
+### 참고
+
+Github : [https://github.com/google/robotstxt](https://github.com/google/robotstxt)
+
+About Robots.txt : [https://developers.google.com/search/docs/crawling-indexing/robots/intro](https://developers.google.com/search/docs/crawling-indexing/robots/intro)
+
+### 라이센스
+
+Apache License
+Version 2.0, January 2004
+[https://www.apache.org/licenses/](https://www.apache.org/licenses/)
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at [https://www.apache.org/licenses/LICENSE-2.0](https://www.apache.org/licenses/LICENSE-2.0)
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
 ### RQ-트랜스포머
 
 ### 설명
