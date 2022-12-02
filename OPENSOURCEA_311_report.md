@@ -193,3 +193,38 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+### Survey
+
+### 설명
+설문조사를 생성하고, 사용자에게 그 설문조사를 배포한다.
+ANSI 이스케이프 시퀀스를 지원하는 터미널에서 대화형 및 접근 가능한 프롬프트를 구축하기 위한 라이브러리이다.
+
+### 특징
+프롬프트를 실행하고 사용자로부터 정보를 수집하는 두 가지 주요 방법인 Ask와 AskOne의 주요 차이점은 단일 정보를 수집하는 데 관심이 있는지 또는 단일 구조체에서 누구의 답변을 수집해야 하는지 물어볼 질문 목록이 있는지 여부이다. 
+
+### 참고
+https://github.com/go-survey/survey
+
+### License
+
+MIT License	
+	
+	Copyright (c) 2018 Alec Aivazis
+	
+	Permission is hereby granted, free of charge, to any person obtaining a copy
+	of this software and associated documentation files (the "Software"), to deal
+	in the Software without restriction, including without limitation the rights
+	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+	copies of the Software, and to permit persons to whom the Software is
+	furnished to do so, subject to the following conditions:
+	
+	The above copyright notice and this permission notice shall be included in all
+	copies or substantial portions of the Software.
+	
+	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+	SOFTWARE.
