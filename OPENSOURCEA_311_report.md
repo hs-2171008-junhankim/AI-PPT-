@@ -339,6 +339,46 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
+### Text_Classification
+
+### 설명
+python 기반으로 설문조사 결과를 분석하고, 그 결과를 데이터베이스에 저장하는 용도로 사용한다. 단어의 벡터 표현을 계산하기 위한 연속적인 bag-of-words 및 skip-gram 도구를 효율적으로 구현한다. 이러한 표현은 나중에 많은 자연어 처리 응용 프로그램과 추가 연구 목적으로 사용될 수 있다.
+
+### 특징 
+ 
+텍스트 분류를 위한 계층적 딥 러닝(HDLTex)이라고 부르는 접근 방식을 사용하여 계층적 분류를 수행한다. HDLTex는 문서에 대한 계층적 이해를 제공하기 위해 딥 러닝 아키텍처 스택을 사용한다.
+
+비교 텍스트 분류 알고리즘
+
+### 참고
+https://github.com/kk7nc/Text_Classification
+
+### License
+
+MIT License	
+	
+	Copyright (c) 2020 Kamran  Kowsari
+	
+	Permission is hereby granted, free of charge, to any person obtaining a copy
+	of this software and associated documentation files (the "Software"), to deal
+	in the Software without restriction, including without limitation the rights
+	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+	copies of the Software, and to permit persons to whom the Software is
+	furnished to do so, subject to the following conditions:
+	
+	The above copyright notice and this permission notice shall be included in all
+	copies or substantial portions of the Software.
+	
+	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+	SOFTWARE.
+
+
+
 # 4.DFD
 <img width="1106" alt="스크린샷 2022-12-03 오후 10 53 56" src="https://user-images.githubusercontent.com/112336847/205444447-451b9618-bb43-41c7-bd52-07e7a4d88476.png">
 
