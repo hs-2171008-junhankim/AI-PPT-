@@ -29,7 +29,7 @@
 
 ### TensorFlow
 
-### 설명
+### 설명 
 
    기존 사용자들이 원했던 템플릿과 같은 템플릿을 원하는 것 같을 때 템플릿을 추천해주는 용도로 사용한다.
 
@@ -63,7 +63,7 @@ tensorflow는 graphs의 형태로 나타내는 프로그래밍 시스템을 말�
 보증의 부인 : 가능
 책임의 제한 : 가능
 
-### robotstxt
+### robotstxt 
 
 ### 설명
 
@@ -90,7 +90,7 @@ Github : [https://github.com/google/robotstxt](https://github.com/google/robotst
 About Robots.txt : [https://developers.google.com/search/docs/crawling-indexing/robots/intro](https://developers.google.com/search/docs/crawling-indexing/robots/intro)
 
 ### 라이센스
-
+ 
 Apache License
 Version 2.0, January 2004
 [https://www.apache.org/licenses/](https://www.apache.org/licenses/)
@@ -228,3 +228,46 @@ MIT License
 	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 	SOFTWARE.
+	
+	
+### Bootstrap
+
+### 설명
+
+부트스트랩은 반응형이며 웹프로젝트 개발을 위한 가장 인기있는 HTM, CSS, JS 프레임워크입니다.
+사용자가 웹사이트를 이용해 PPT 템플릿을 확인해야 하기에, 부트스트랩을 이용해 HTML5를 기반으로 CSS와 JavaScript로 만들어 놓은 프레임 워크로 다양한 형태의 엘리먼트를 제공을 받아 쉽게 홈페이지를 개발할 수 있게 도와줍니다.
+
+### 참고
+
+https://github.com/twbs/bootstrap
+
+https://getbootstrap.kr/
+
+### 특징
+
+부트스트랩은 버전이 나누어져있는데, 개발 환경에 맞게 지원할수있는 버전을 골라 설치를 한다.
+
+### License
+
+The MIT License (MIT)
+
+Copyright (c) 2011-2022 Twitter, Inc.
+Copyright (c) 2011-2022 The Bootstrap Authors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
