@@ -339,6 +339,44 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
+### classify-images
+
+### 설명
+사용자가 태그를 포함하는 파일(제로샷 파일)을 업로드한다.
+알고리즘이 이미지 내용에 따라 각 이미지에 태그를 할당하여 비슷한 이미지를 같은 태그로 분류한다.
+분류된 이미지를 설문조사 결과DB로 넘기면 웹페이지에서 이미지를 보고 선택할 수 있도록 한다.
+
+### 특징
+주어진 태그로 이미지를 분류하기 위한 웹 앱이다.
+이 애플리케이션은 프론트엔드와 백엔드로 구성된다.
+프런트엔드는 React 및 rsuite, axios 및 particle.js와 같은 패키지를 사용하여 구현된다.
+분류된 이미지를 웹으로 불러서 사람들이 볼 수 있게 한다.
+백엔드는 OpenAi의 CLIP 모델을 통하여 제로샷 파일을 학습하고, 비디오 검색 및 이미지 검색을 수행한다.
+검색된 이미지를 받아 태그로 이미지를 분류한다.
+
+### 참고
+github : https://github.com/Cameramorphic/classify-images
+OpenAi의 CLIP 모델 : https://github.com/openai/CLIP
+
+### License
+MIT License
+Copyright (c) 2021 Höhing, Nils; Rittenschober, Johann; Schuschnig, Ricarda; Schwarzer, Tobias;
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
 # 4.DFD
 <img width="1106" alt="스크린샷 2022-12-03 오후 10 53 56" src="https://user-images.githubusercontent.com/112336847/205444447-451b9618-bb43-41c7-bd52-07e7a4d88476.png">
 
