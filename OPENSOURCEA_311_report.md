@@ -3,6 +3,7 @@
 ---
 
 # 목차
+
 1. 개요
     - 서비스 목적 및 배경
     - 서비스 설명
@@ -14,17 +15,17 @@
 # 1. 개요
 
 - 서비스 목적 및 배경
-
-   중요한 발표 자리에서 PPT의 사용은 빈번하다. 그때마다 우리는 PPT에 사용할 템플릿을 고민해야 한다. 인터넷에서 특정 키워드를 검색하여 주제에 맞는 템플릿이 찾아지는 경우에는 그대로 사용하면 되겠지만 찾는데까지 시간이 걸린다는 불편함이 있다. 그리고 주제가 독특한 경우나 한 단어로 표현할 수 없는 주제의 경우에는 적합한 템플릿을 찾기가 어려울 수 있다.  이러한 문제를 해결하고자 본 서비스는 주제에 맞는 PPT 템플릿을 바로 얻을 수 있는 웹 서비스를 제작하게 되었다.
-
+    
+    중요한 발표 자리에서 PPT의 사용은 빈번하다. 그때마다 우리는 PPT에 사용할 템플릿을 고민해야 한다. 인터넷에서 특정 키워드를 검색하여 주제에 맞는 템플릿이 찾아지는 경우에는 그대로 사용하면 되겠지만 찾는 데까지 시간이 걸린다는 불편함이 있다. 그리고 주제가 독특한 경우나 한 단어로 표현할 수 없는 주제의 경우에는 적합한 템플릿을 찾기가 어려울 수 있다.  이러한 문제를 해결하고자 본 서비스는 주제에 맞는 PPT 템플릿을 바로 얻을 수 있는 웹 서비스를 제작하게 되었다.
+    
 - 서비스 설명
-
-   사용자는 PPT 템플릿을 만들고 싶을 때 본 서비스를 제공하는 웹 사이트에 방문한다. 사용자는 PPT 템플릿에 사용될 키워드를 주제에 대한 설문조사를 진행한다. 만약, 설문조사 결과가 이전의 사용자들과 비슷한 결과로 나타난다면 중간 단계 없이 템플릿을 추천받는다. 사용자가 원하는 템플릿이 없거나 이전의 사용자들과는 다른 설문결과가 나올 경우, 사용자는 AI가 설문결과를 토대로 만든 이미지들 중 원하는 분위기의 이미지를 선택하게 되고 그 이미지를 이용하여 PPT 템플릿을 제공한다.
-
+    
+    사용자는 PPT 템플릿을 만들고 싶을 때 본 서비스를 제공하는 웹 사이트에 방문한다. 사용자는 PPT 템플릿에 사용될 키워드를 주제에 대한 설문조사를 진행한다. 만약, 설문조사 결과가 이전의 사용자들과 비슷한 결과로 나타난다면 중간 단계 없이 템플릿을 추천받는다. 사용자가 원하는 템플릿이 없거나 이전의 사용자들과는 다른 설문 결과가 나올 경우, 사용자는 AI가 설문 결과를 토대로 만든 이미지들 중 원하는 분위기의 이미지를 선택하게 되고 그 이미지를 이용하여 PPT 템플릿을 제공한다.
+    
 - 서비스 구조
-
-   먼저, 사용자는 원하는 디자인에 대한 설문조사를 진행한다. 설문결과는 텍스트 형태로 Tensorflow에 전송되고 Text-Classification을 통해 텍스트가 분석되며 설문조사 결과 DB에 전송된다. Tensorflow는 사용자가 원하는 템플릿이 기존 사용자가 사용한 템플릿과 같을 경우 설문조사 DB에서 이미지를 가져와 즉시, PptxGenJS를 통해 템플릿을 제공한다. 사용자가 원하는 템플릿이 기존에 제공된 적 없는 템플릿이라면, 설문결과를 Robotstxt에 전송하여 키워드를 크롤링하고 관련된 키워드들을 바탕으로 RQ-transformer가 관련된 이미지들을 생성한다. 생성된 이미지들은 Go-survey에 전송되어 사용자가 원하는 이미지를 선택할 수 있도록 한 번더 설문조사가 진행된다. 사용자가 이미지를 선택하면, 선택한 이미지를 PptsGenJS에 전송하여 템플릿을 만들어 제공한다. 동시에 생성된 이미지들을 Classify-images에 전송하여 분류하고 설문조사 결과 DB에 전송하여 DB를 계속해서 업데이트 한다.
-   
+    
+    먼저, 사용자는 원하는 디자인에 대한 설문조사를 진행한다. 설문 결과는 텍스트 형태로 Tensorflow에 전송되고 Text-Classification을 통해 텍스트가 분석되며 설문조사 결과 DB에 전송된다. Tensorflow는 사용자가 원하는 템플릿이 기존 사용자가 사용한 템플릿과 같을 경우 설문조사 DB에서 이미지를 가져와 즉시, PptxGenJS를 통해 템플릿을 제공한다. 사용자가 원하는 템플릿이 기존에 제공된 적 없는 템플릿이라면, 설문 결과를 Robotstxt에 전송하여 키워드를 크롤링하고 관련된 키워드들을 바탕으로 RQ-transformer가 관련된 이미지들을 생성한다. 생성된 이미지들은 Go-survey에 전송되어 사용자가 원하는 이미지를 선택할 수 있도록 한 번 더 설문조사가 진행된다. 사용자가 이미지를 선택하면, 선택한 이미지를 PptsGenJS에 전송하여 템플릿을 만들어 제공한다. 동시에 생성된 이미지들을 Classify-images에 전송하여 분류하고 설문조사 결과 DB에 전송하여 DB를 계속해서 업데이트 한다.
+    
 
 # 2. 유사 서비스 분석
 
@@ -38,7 +39,7 @@ Freepik은 이미지, 벡터 파일 등의 그래픽 소스들을 무료로 받�
 
 ### 장단점
 
-장점 
+장점
 
 1. 이미지와 같은 그래픽 소스들을 무료로 다운로드할 수 있다.
 2. 다양한 필터링을 통해 원하는 ppt 디자인을 찾아 다운로드할 수 있다.
@@ -60,7 +61,7 @@ Canva는 다양한 유형의 템플릿을 활용해 ppt 디자인을 만들고 �
 
 ### 장단점
 
-장점 
+장점
 
 1. 다양한 이미지와 템플릿을 무료로 다운로드할 수 있다.
 2. 텍스트 입력 시 이미지로 변환이 가능하다.
@@ -78,33 +79,32 @@ url : [https://www.miricanvas.com/](https://www.miricanvas.com/)
 
 ### 설명
 
-미리캔버스는 별도의 프로그램 설치 없이 웹에서 쉽게 ppt, 템플릿, 포스터 등의 디자인 제작이 가능한 서비스를 제공하는 사이트이다. 
+미리캔버스는 별도의 프로그램 설치 없이 웹에서 쉽게 ppt, 템플릿, 포스터 등의 디자인 제작이 가능한 서비스를 제공하는 사이트이다.
 
 ### 장단점
 
-장점 
+장점
 
 1. 한국어 사이트로, 사용하기 용이하다.
 2. 키워드 검색을 지원한다.
 
 단점
 
-1. 유료 템플릿이 존재한다.   
-
+1. 유료 템플릿이 존재한다.
 
 # 3. 사용된 오픈소스 소프트웨어
 
 ### TensorFlow
 
-### 설명 
+### 설명
 
-   기존 사용자들이 원했던 템플릿과 같은 템플릿을 원하는 것 같을 때 템플릿을 추천해주는 용도로 사용한다.
+기존 사용자들이 원했던 템플릿과 같은 템플릿을 원하는 것 같을 때 템플릿을 추천해 주는 용도로 사용한다.
 
-tensorflow는 graphs의 형태로 나타내는 프로그래밍 시스템을 말한다. 그래프에 있는 노드들은 operations이라고 불리우는데, 줄여서 ops라고 칭한다. op는 Tensor로 이루어져 있고, tensors간에 computaiton을 수행하게 된다. tensor는 multi-dimentional array형태로 되어있다. Tensorflow graph를 연산하기 위해서는 Session을 launch를 해야한다. Session은 Devices(CPUs, GPUs)위에서 연산을 실행한 후에 결과를 반환한다.
+tensorflow는 graphs의 형태로 나타내는 프로그래밍 시스템을 말한다. 그래프에 있는 노드들은 operations이라고 불리는데, 줄여서 ops라고 칭한다. op는 Tensor로 이루어져 있고, tensors 간에 computaiton을 수행하게 된다. tensor는 multi-dimentional array 형태로 되어있다. Tensorflow graph를 연산하기 위해서는 Session을 launch를 해야 한다. Session은 Devices(CPUs, GPUs) 위에서 연산을 실행한 후에 결과를 반환한다.
 
 ### 특징
 
-   ML 모델을 개발학 학습시키는 데 도움이 되는 핵심 오픈소스 라이브러리를 제공한다.
+ML 모델을 개발학 학습시키는 데 도움이 되는 핵심 오픈소스 라이브러리를 제공한다.
 즉각적인 모델 반복 및 손쉬운 디버깅을 가능하게 하는 즉시 실행 기능이 포함된 Keras와 같은 높은 수준의 직관적인 API를 사용하여 ML 모델을 쉽게 빌드하고 학습한다.
 
 ### 출처 및 참고
@@ -132,18 +132,17 @@ tensorflow는 graphs의 형태로 나타내는 프로그래밍 시스템을 말�
 
 ---
 
-### robotstxt 
+### robotstxt
 
 ### 설명
 
-robots.txt는 웹사이트에서 크롤링하며 정보를 수집하는 검색엔진 크롤러(또는 검색 로봇)가 액세스 하거나 정보수집을 해도 되는 페이지가 무엇인지, 해서는 안 되는 페이지가 무엇인지 알려주는 역할을 하는 .txt (텍스트) 파일이다. robots.txt 파일은 검색엔진 크롤러가 웹사이트에 접속하여 정보 수집을 하며 보내는 요청(request)으로 인해 사이트 과부하되는 것을 방지하기 위해 사용된다. robots.txt에서 액세스가 허용하지 않은 디렉토리를 발견하면 크롤링을 하지않는다
+robots.txt는 웹사이트에서 크롤링 하며 정보를 수집하는 검색엔진 크롤러(또는 검색 로봇)가 액세스하거나 정보 수집을 해도 되는 페이지가 무엇인지, 해서는 안 되는 페이지가 무엇인지 알려주는 역할을 하는 .txt (텍스트) 파일이다. robots.txt 파일은 검색엔진 크롤러가 웹사이트에 접속하여 정보 수집을 하며 보내는 요청(request)으로 인해 사이트 과부하되는 것을 방지하기 위해 사용된다. robots.txt에서 액세스가 허용하지 않은 디렉터리를 발견하면 크롤링을 하지 않는다.
 
-### 사용방법
+### 사용 방법
 
 <aside>
 💡 User-agent: *
 Disallow: /forbidden/
-
 
 </aside>
 
@@ -159,7 +158,7 @@ Github : [https://github.com/google/robotstxt](https://github.com/google/robotst
 About Robots.txt : [https://developers.google.com/search/docs/crawling-indexing/robots/intro](https://developers.google.com/search/docs/crawling-indexing/robots/intro)
 
 ### 라이센스
- 
+
 Apache License
 Version 2.0, January 2004
 [https://www.apache.org/licenses/](https://www.apache.org/licenses/)
@@ -180,7 +179,7 @@ limitations under the License.
 
 ### 설명
 
-39 억 개의 매개변수(파라미터)로 구성된 RQ-트랜스포머는 3000만 쌍의 텍스트-이미지를 학습한 텍스트-투-이미지(text-to-image) AI 모델로, 계산 비용을 줄이고 이미지 생성 속도를 높인 동시에 이미지의 품질을 크게 끌어올린 모델이다. 
+39 억 개의 매개변수(파라미터)로 구성된 RQ-트랜스포머는 3000만 쌍의 텍스트-이미지를 학습한 텍스트-투-이미지(text-to-image) AI 모델로, 계산 비용을 줄이고 이미지 생성 속도를 높인 동시에 이미지의 품질을 크게 끌어올린 모델이다.
 
 이는 초거대 멀티 모달 인공지능(AI) 민달리(minDALL-E)의 업그레이드 버전으로, 기존의 민달리 대비 모델 크기는 3배, 이미지 생성 속도와 학습 데이터 셋 크기는 2배 늘림으로써 공개된 이미지 생성 모델 중 국내 최대 크기의 이미지 생성 모델이다.
 
@@ -220,27 +219,26 @@ CC BY NC SA license (저작자 표시-비영리-동일조건변경허락)
 ### 설명
 
 This library creates Open Office XML (OOXML) Presentations which are compatible with Microsoft PowerPoint, Apple Keynote, and other applications.
-이 라이브러리는 Microsoft PowerPoint, Apple Keynote 및 기타 응용 프로그램과 호환되는 Open Office XML (OOXML) 프레젠테이션을 만듭니다.
+이 라이브러리는 Microsoft PowerPoint, Apple Keynote 및 기타 응용 프로그램과 호환되는 Open Office XML (OOXML) 프레젠테이션을 만든다.
 
-자바스크립트를 사용하여 웹 페이지에서 동작하게 하기 편하고, PPT파일 생성, 텍스트나 글상자등 각종 객체를 만들 수 있습니다. 그리고 마스터 슬라이드 편집까지 가능하기 때문에 템플릿을 수정하는 것도 가능합니다.
+자바스크립트를 사용하여 웹 페이지에서 동작하게 하기 편하고, PPT 파일 생성, 텍스트나 글 상자 등 각종 객체를 만들 수 있다. 또한, 마스터 슬라이드 편집까지 가능하기 때문에 템플릿을 수정하는 것도 가능하다.
 
 ### 참고
 
-Github : https://github.com/gitbrent/PptxGenJS
+Github : [https://github.com/gitbrent/PptxGenJS](https://github.com/gitbrent/PptxGenJS)
 
-Official site : https://gitbrent.github.io/PptxGenJS
+Official site : [https://gitbrent.github.io/PptxGenJS](https://gitbrent.github.io/PptxGenJS)
 
-About master slide : https://gitbrent.github.io/PptxGenJS/docs/masters/
+About master slide : [https://gitbrent.github.io/PptxGenJS/docs/masters/](https://gitbrent.github.io/PptxGenJS/docs/masters/)
 
 ### About ppt_test.html
 
-1.생성된 ppt를 열면 손상되었으니 복구~ 라고 뜨는데 복구 누르시면 됩니다
-
-2.처음에는 이미지 파일 경로를 받아서 pptx를 만들려고 했는데 그렇게 하니까 브라우저의 보안 정책에 걸립니다(cors 정책) 브라우저에서 보안 정책을 건드릴 수 있긴 한데 일단 별도 작업 없이 돌아가게 하고 싶어서 input file에서 받은 파일을 base64로 변환한 뒤 사용하고 있습니다. 복구~ 뜨는 것도 아마 그거 때문일 겁니다
-
-3.현재 구현된 부분은 이미지를 넣으면 그 이미지를 제목 슬라이드의 배경으로 하는 부분까지입니다
+1. 생성된 ppt를 열면 손상되었으니 복구~ 라고 뜨는데 복구 누르시면 됩니다
+2. 처음에는 이미지 파일 경로를 받아서 pptx를 만들려고 했는데 그렇게 하니까 브라우저의 보안 정책에 걸립니다(cors 정책) 브라우저에서 보안 정책을 건드릴 수 있긴 한데 일단 별도 작업 없이 돌아가게 하고 싶어서 input file에서 받은 파일을 base64로 변환한 뒤 사용하고 있습니다. 복구~ 뜨는 것도 아마 그거 때문일 겁니다
+3. 현재 구현된 부분은 이미지를 넣으면 그 이미지를 제목 슬라이드의 배경으로 하는 부분까지입니다
 
 ### License
+
 MIT 라이센스입니다.
 
 The MIT License (MIT)
@@ -270,57 +268,63 @@ SOFTWARE.
 ### Survey
 
 ### 설명
+
 설문조사를 생성하고, 사용자에게 그 설문조사를 배포한다.
 ANSI 이스케이프 시퀀스를 지원하는 터미널에서 대화형 및 접근 가능한 프롬프트를 구축하기 위한 라이브러리이다.
 
 ### 특징
+
 프롬프트를 실행하고 사용자로부터 정보를 수집하는 두 가지 주요 방법인 Ask와 AskOne의 주요 차이점은 단일 정보를 수집하는 데 관심이 있는지 또는 단일 구조체에서 누구의 답변을 수집해야 하는지 물어볼 질문 목록이 있는지 여부이다. 임시 파일에서 사용자가 선호하는 편집기를 실행한다. 사용자가 편집기를 종료하면, 임시 파일의 내용이 결과적으로 읽힌다. 둘 다 없다면, 메모장(Windows) 또는 vim(Linux 또는 Mac)이 사용된다.
 
 ### 참고
-https://github.com/go-survey/survey
+
+[https://github.com/go-survey/survey](https://github.com/go-survey/survey)
 
 ### License
 
-MIT License	
-	
-	Copyright (c) 2018 Alec Aivazis
-	
-	Permission is hereby granted, free of charge, to any person obtaining a copy
-	of this software and associated documentation files (the "Software"), to deal
-	in the Software without restriction, including without limitation the rights
-	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-	copies of the Software, and to permit persons to whom the Software is
-	furnished to do so, subject to the following conditions:
-	
-	The above copyright notice and this permission notice shall be included in all
-	copies or substantial portions of the Software.
-	
-	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-	SOFTWARE.
-	
----	
+MIT License
+
+```
+Copyright (c) 2018 Alec Aivazis
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+```
+
+---
 
 ### Bootstrap
 
 ### 설명
 
-부트스트랩은 반응형이며 웹프로젝트 개발을 위한 가장 인기있는 HTM, CSS, JS 프레임워크입니다.
-사용자가 웹사이트를 이용해 PPT 템플릿을 확인해야 하기에, 부트스트랩을 이용해 HTML5를 기반으로 CSS와 JavaScript로 만들어 놓은 프레임 워크로 다양한 형태의 엘리먼트를 제공을 받아 쉽게 홈페이지를 개발할 수 있게 도와줍니다.
-
-### 참고
-
-https://github.com/twbs/bootstrap
-
-https://getbootstrap.kr/
+부트스트랩은 반응형이며 웹 프로젝트 개발을 위한 가장 인기 있는 HTM, CSS, JS 프레임워크이다.
+사용자가 웹사이트를 이용해 PPT 템플릿을 확인해야 하기 때문에, 부트스트랩을 이용해 HTML5를 기반으로 CSS와 JavaScript로 만들어 놓은 프레임 워크로 다양한 형태의 element를 제공받아 쉽게 홈페이지를 개발할 수 있게 도와준다.
 
 ### 특징
 
-부트스트랩은 버전이 나누어져있는데, 개발 환경에 맞게 지원할수있는 버전을 골라 설치를 한다.
+부트스트랩은 버전이 나누어져 있는데, 개발 환경에 맞게 지원할 수 있는 버전을 골라 설치를 한다.
+
+### 참고
+
+[https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
+
+[https://getbootstrap.kr/](https://getbootstrap.kr/)
 
 ### License
 
@@ -352,49 +356,56 @@ THE SOFTWARE.
 ### Text_Classification
 
 ### 설명
+
 python 기반으로 설문조사 결과를 분석하고, 그 결과를 데이터베이스에 저장하는 비교 텍스트 분류 알고리즘이다. 단어의 벡터 표현을 계산하기 위한 연속적인 bag-of-words 및 skip-gram 도구를 효율적으로 구현한다. 이러한 표현은 나중에 많은 자연어 처리 응용 프로그램과 추가 연구 목적으로 사용될 수 있다.
 
-### 특징 
- 
+### 특징
+
 텍스트 분류를 위한 계층적 딥 러닝(HDLTex)이라고 부르는 접근 방식을 사용하여 계층적 분류를 수행한다. HDLTex는 문서에 대한 계층적 이해를 제공하기 위해 딥 러닝 아키텍처 스택을 사용한다.
 
 ### 참고
-https://github.com/kk7nc/Text_Classification
+
+[https://github.com/kk7nc/Text_Classification](https://github.com/kk7nc/Text_Classification)
 
 ### License
 
-MIT License	
-	
-	Copyright (c) 2020 Kamran  Kowsari
-	
-	Permission is hereby granted, free of charge, to any person obtaining a copy
-	of this software and associated documentation files (the "Software"), to deal
-	in the Software without restriction, including without limitation the rights
-	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-	copies of the Software, and to permit persons to whom the Software is
-	furnished to do so, subject to the following conditions:
-	
-	The above copyright notice and this permission notice shall be included in all
-	copies or substantial portions of the Software.
-	
-	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-	SOFTWARE.
+MIT License
+
+```
+Copyright (c) 2020 Kamran  Kowsari
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+```
 
 ---
 
 ### classify-images
 
 ### 설명
+
 사용자가 태그를 포함하는 파일(제로샷 파일)을 업로드한다.
 알고리즘이 이미지 내용에 따라 각 이미지에 태그를 할당하여 비슷한 이미지를 같은 태그로 분류한다.
-분류된 이미지를 설문조사 결과DB로 넘기면 웹페이지에서 이미지를 보고 선택할 수 있도록 한다.
+분류된 이미지를 설문조사 결과 DB로 넘기면 웹페이지에서 이미지를 보고 선택할 수 있도록 한다.
 
 ### 특징
+
 주어진 태그로 이미지를 분류하기 위한 웹 앱이다.
 이 애플리케이션은 프론트엔드와 백엔드로 구성된다.
 프론트엔드는 React 및 rsuite, axios 및 particle.js와 같은 패키지를 사용하여 구현된다.
@@ -403,33 +414,37 @@ MIT License
 검색된 이미지를 받아 태그로 이미지를 분류한다.
 
 ### 참고
-github : https://github.com/Cameramorphic/classify-images
 
-OpenAi의 CLIP 모델 : https://github.com/openai/CLIP
+github : [https://github.com/Cameramorphic/classify-images](https://github.com/Cameramorphic/classify-images)
+
+OpenAi의 CLIP 모델 : [https://github.com/openai/CLIP](https://github.com/openai/CLIP)
 
 ### License
 
-MIT License	
-	
-	Copyright (c) 2020 Kamran  Kowsari
-	
-	Permission is hereby granted, free of charge, to any person obtaining a copy
-	of this software and associated documentation files (the "Software"), to deal
-	in the Software without restriction, including without limitation the rights
-	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-	copies of the Software, and to permit persons to whom the Software is
-	furnished to do so, subject to the following conditions:
-	
-	The above copyright notice and this permission notice shall be included in all
-	copies or substantial portions of the Software.
-	
-	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-	SOFTWARE.
+MIT License
+
+```
+Copyright (c) 2020 Kamran  Kowsari
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+```
 
 # 4.DFD
 <img width="1106" alt="스크린샷 2022-12-03 오후 10 53 56" src="https://user-images.githubusercontent.com/112336847/205444447-451b9618-bb43-41c7-bd52-07e7a4d88476.png">
